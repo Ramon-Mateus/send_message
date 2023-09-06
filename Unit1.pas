@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Unit2, Vcl.StdCtrls;
 
 type
-  TForm1 = class(TForm)
+  TFormulario01 = class(TForm)
     Label1: TLabel;
     Button1: TButton;
     Edit1: TEdit;
@@ -19,21 +19,20 @@ type
   end;
 
 var
-  Form1: TForm1;
-  EditText: string;
+  Formulario01: TFormulario01;
 
 implementation
 
 {$R *.dfm}
 
-procedure TForm1.Button1Click(Sender: TObject);
+procedure TFormulario01.Button1Click(Sender: TObject);
 var
   lForm02: TFormulario2;
 begin
-  EditText := Edit1.Text;
   lForm02 := TFormulario2.Create(nil);
+  lForm02.Mensagem := Edit1.Text;
   lForm02.ShowModal;
-  showMessage(Mensagem);
+  showMessage(lForm02.Mensagem);
 end;
 
 end.

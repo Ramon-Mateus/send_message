@@ -14,22 +14,21 @@ type
     Label2: TLabel;
     procedure Button2Click(Sender: TObject);
     procedure Button1Click(Sender: TObject);
-    procedure FormCreate(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
+    FMensagem: string;
   public
     { Public declarations }
+    property Mensagem: string read FMensagem write FMensagem;
   end;
 
 var
   Formulario2: TFormulario2;
-  Mensagem: string;
 
 implementation
 
 {$R *.dfm}
-
-uses Unit1;
 
 procedure TFormulario2.Button1Click(Sender: TObject);
 begin
@@ -43,9 +42,9 @@ begin
   close;
 end;
 
-procedure TFormulario2.FormCreate(Sender: TObject);
+procedure TFormulario2.FormShow(Sender: TObject);
 begin
-  Label2.caption := EditText;
+  Label2.caption := Mensagem;
 end;
 
 end.
